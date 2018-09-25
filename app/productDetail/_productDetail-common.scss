@@ -17,8 +17,6 @@
     background-color: white;
 }
 
-
-
 .image {
     z-index: 0;
 }
@@ -103,7 +101,6 @@
 .textfield {
     width: 30%;
     text-align: center;
-    font-size: 14;
     color: rgba(197, 197, 197, 0.863);
 }
 
@@ -125,10 +122,14 @@
 	letter-spacing: 0.1;
     text-align: center;
     text-transform: uppercase;
-    border-bottom-color: #BC4C27;
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+}
+
+.activeTab {
     border-bottom-width: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
+    border-bottom-color: #BC4C27;
+
 }
 
 
@@ -142,17 +143,16 @@
 .sub-title {
 	color: #7D7D7D;
 	font-family: "SF Pro Display";
-	font-size: 14;
     font-weight: 500;
     letter-spacing: 0.1;
 	border-bottom-color: #BC4C27;
-	border-bottom-width: 2dp;
+    border-bottom-width: 2dp;
+    padding-bottom: 1dp;
 }
 
 .sub-title-two {
 	color: black;
 	font-family: "SF Pro Display";
-    font-size: 12;
     font-weight: 500;
     margin-top: 3%;
 }

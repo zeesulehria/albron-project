@@ -9,7 +9,8 @@ import { screen } from "platform";
 })
 export class ProductDetailComponent implements OnInit {
 
-  image = 23;
+  imageHeight;
+  activeTab = 'first';
   heroes = [
     { title: 'Energie Kilojoules (KJ)', value: 19 },
     { title: 'Energie Kilojoules (KJ)', value: 309 },
@@ -28,13 +29,21 @@ export class ProductDetailComponent implements OnInit {
   }
 
   @ViewChild('listview') listview: ElementRef;
+  @ViewChild('screen') screen: ElementRef;
 
   onLoaded() {
-    console.log("working in on loaded function");
-    console.dir(this.listview.nativeElement.getActualSize());
     this.listview.nativeElement.height = this.listview.nativeElement.getActualSize().height;
-    // screen.mainScreen.heightPixels/100 * 25;
-    // this.image =  (screen.mainScreen.heightPixels/100 * 35);
-    // console.log("this is the image"+ this.image);
+    // console.dir("+==============="+this.screen.nativeElement.getMeasuredHeight());
+    // this.imageHeight = this.screen.nativeElement.getActualSize().height/3.5;
+  }
+
+
+  changeTab(args)
+  {
+    this.activeTab = args;
+  }
+
+  get isactiveTab () {
+    return this.activeTab;
   }
 }
