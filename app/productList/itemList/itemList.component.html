@@ -1,0 +1,25 @@
+<GridLayout tkExampleTitle tkToggleNavButton>
+  <RadListView [items]="dataItems" class="page-background">
+    <ng-template tkListItemTemplate let-item="item">
+      <Gridlayout rows="*" class="item-list-padding" columns="*">
+        <GridLayout width="55%" horizontalAlignment="left" rows="*" columns="*" backgroundColor="blue" class="item-list">
+          <GridLayout width="37%" rows="*,auto" columns="*" horizontalAlignment="left">
+            <Image class="image" height="66dp" stretch="fit" src="https://images.unsplash.com/photo-1534409707960-668dbea5c35f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8f6c33f19565164ed8d45b37b62820d7&auto=format&fit=crop&w=100&q=100"></Image>
+            <GridLayout row="1" rows="*" columns="*,*" class="image-label">
+              <Label col="0" text='&#xe556;' class='mainFont  text-right md-icon  icon-color font-20'></Label>
+              <Label col="1" text="73" class="mainFont text-left  font-10 " textWrap="true"></Label>
+            </GridLayout>
+          </GridLayout>
+          <StackLayout width="62%" horizontalAlignment="right" col="1"  class="list-item-info">
+            <Label text="Rood fruit Avocado Smoothie" class="font-14 title-item-list" textWrap="true"></Label>
+            <GridLayout>
+              <Label text="0." class="number-styling font-27" textWrap="true"></Label>
+              <Label text="50" class="small-number-styling font-13" textWrap="true"></Label>
+            </GridLayout>
+          </StackLayout>
+        </GridLayout>
+      </Gridlayout>
+    </ng-template>
+    <ListViewGridLayout tkListViewLayout scrollDirection="Horizontal"  spanCount="5"></ListViewGridLayout>
+  </RadListView>
+</GridLayout>

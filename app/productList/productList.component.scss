@@ -1,0 +1,52 @@
+@import '../theme/sass/index';
+
+.page-padding {
+    margin-top: -100dp;
+    background-color: $background;
+}
+
+.large-title {
+	font-family: "SF Pro Display";
+	font-size: 34px;
+	font-weight: bold;
+    letter-spacing: 0.01px;
+    color: white;
+    padding-left: 14dp;
+    padding-bottom: 3dp;
+}
+
+
+.tab-item {
+    font-family: "SF Pro Display";
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.11px;
+    vertical-align: middle;
+    padding: 16dp 25dp  13dp 25dp;
+    text-transform: uppercase;
+}
+
+.activeTab {
+    border-bottom-color: rgba(188,76,39,1);
+    border-bottom-width:2dp;
+    color: rgba(188,76,39,1);
+}
+
+
+.inactivetab {
+        color: rgba(125,125,125,1);
+}
+
+.tab-align {
+        border-bottom-width:1dp;
+        border-bottom-color: rgba(188,76,39,1);
+        background-color: $background;
+}
+
+.marginlefttab {
+    margin-left: 25dp;
+}
+
+.marginrighttab {
+    margin-right: 25dp;
+}

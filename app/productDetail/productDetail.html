@@ -3,8 +3,8 @@
     <GridLayout rows="auto,auto" columns="*" class="image-card">
       <GridLayout>
         <Image height="187dp" class="image" stretch="aspectfill" src="https://images.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg?auto=compress&cs=tinysrgb&h=350"></Image>
-        <Label text="&#xe87e;" class="mainFont font-12 md-icon align-icon heart" horizontalAlignment="left" verticalAlignment="top"
-          textWrap="true"></Label>
+        <Label text="&#xe87e;" class="mainFont font-12 md-icon align-icon heart" horizontalAlignment="left"
+          verticalAlignment="top" textWrap="true"></Label>
         <Label text="&#xe5cd;" class="mainFont font-26 md-icon close-icon align-icon " horizontalAlignment="right"
           verticalAlignment="top" textWrap="true"></Label>
       </GridLayout>
@@ -34,8 +34,10 @@
 
         </GridLayout>
         <GridLayout rows="auto" columns="*,*" row="2" class="tabs-border">
-          <Label text="Ingrediënten" class="tabs font-12 mainFont" (tap)="changeTab('first')" [ngClass]="{activeTab : isactiveTab == 'first'}"   textWrap="true"></Label>
-          <Label text="informatie" class="tabs font-12 mainFont"  (tap)="changeTab('second')" [ngClass]="{activeTab : isactiveTab == 'second'}" col="1" textWrap="true"></Label>
+          <Label text="Ingrediënten" class="tabs font-12 mainFont" (tap)="changeTab('first')" [ngClass]="{activeTab : isactiveTab == 'first'}"
+            textWrap="true"></Label>
+          <Label text="informatie" class="tabs font-12 mainFont" (tap)="changeTab('second')" [ngClass]="{activeTab : isactiveTab == 'second'}"
+            col="1" textWrap="true"></Label>
         </GridLayout>
       </StackLayout>
     </GridLayout>

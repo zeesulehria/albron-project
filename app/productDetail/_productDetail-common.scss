@@ -1,5 +1,9 @@
 @import '../theme/sass/index';
 
+.md-icon {
+    font-family: $material-icon-font;
+}
+
 .page-padding {
     padding: 5%;
     margin-top: -50dp;
@@ -21,9 +25,7 @@
     z-index: 0;
 }
 
-.md-icon {
-    font-family: $material-icon-font;
-}
+
 
 .extra-margin {
     padding-top: 22dp;

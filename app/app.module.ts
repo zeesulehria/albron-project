@@ -9,6 +9,11 @@ import { AppComponent } from "./app.component";
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 // import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { ProductDetailComponent } from './productDetail/productDetail.component';
+import { ProductListComponent } from './productList/productList.component';
+import { PagerModule } from "nativescript-pager/angular";
+import { ItemListComponent } from "~/productList/itemList/itemList.component";
+import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
+import { DataService } from "~/services/data.service";
 
 @NgModule({
    bootstrap: [
@@ -17,13 +22,16 @@ import { ProductDetailComponent } from './productDetail/productDetail.component'
    imports: [
       NativeScriptModule,
       AppRoutingModule,
+      PagerModule,
+      NativeScriptUIListViewModule
    ],
    declarations: [
       AppComponent,
-      ProductDetailComponent
+      ProductDetailComponent,
+      ProductListComponent,
+      ItemListComponent
    ],
-   providers: [
-   ],
+   providers: [DataService],
    schemas: [
       NO_ERRORS_SCHEMA
    ]

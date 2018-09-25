@@ -1,0 +1,24 @@
+<GridLayout rows="auto,*">
+  <GridLayout class="page-padding" height="200dp" rows="*" columns="*" verticalAlignment="top">
+    <Image stretch="aspectFill" src="https://www.thehindubusinessline.com/migration_catalog/article19347481.ece/alternates/WIDE_660/BL20_MAIN_THINK1"></Image>
+    <Label text="Assortiment" class="large-title" verticalAlignment="bottom" textWrap="true"></Label>
+  </GridLayout>
+
+  <GridLayout row="1" rows="auto,*" columns="*">
+    <GridLayout rows="*" columns="auto" class="tab-align">
+      <ScrollView orientation="horizontal" width="100%" scrollBarIndicatorVisible="false">
+        <StackLayout orientation="horizontal">
+          <ng-container *ngFor="let item of tabs; let i = index;">
+            <Label [text]="item.title" [nsRouterLink]="['/productDetail']" (tap)="tabChanged(i)" [ngClass]="{ activeTab : i == isActiveTab(), inactivetab : i != isActiveTab(), marginlefttab : i == 0}"
+              class=" tab-item " textWrap="true"></Label>
+          </ng-container>
+        </StackLayout>
+      </ScrollView>
+    </GridLayout>
+    <Pager row="1" disableSwipe="true" [items]="items | async" #pager [selectedIndex]="currentPagerIndex" (selectedIndexChange)="onIndexChanged($event)">
+      <ng-template let-i="index" let-item="item">
+        <app-itemList></app-itemList>
+      </ng-template>
+    </Pager>
+  </GridLayout>
+</GridLayout>

@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { screen } from "platform";
+import { DataService } from '~/services/data.service';
 
 @Component({
   selector: 'app-productDetail',
@@ -23,9 +24,10 @@ export class ProductDetailComponent implements OnInit {
     { title: 'Energie Kilojoules (KJ)', value: 72 },
   ];
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.productDetail;
   }
 
   @ViewChild('listview') listview: ElementRef;
