@@ -4,7 +4,7 @@
     padding: 5%;
     margin-top: -50dp;
     padding-top: 50dp;
-    background-color: #eeeeee;
+    background-color: $background;
 }
 
 .image-card {
@@ -67,19 +67,18 @@
 }
 
 .number-styling {
-	color: #BC4C27;
-	font-family: "SF Pro Display";
+	color: $primary-color;
     font-weight: bold;
 }
 
 .heart {
-    color: #BC4C27;
+    color: $primary-color;
     padding: 17% 5% 0% 18%;
     z-index: 1;
 }
 
 .small-number-styling {
-	color: #BC4C27;
+	color: $primary-color;
     font-weight: 900;
     padding: 0% 0% 14% 27%;
 }
@@ -116,8 +115,7 @@
 
 .tabs {
     padding:12% 0% 12% 0%;
-	color: #7D7D7D;
-	font-family: "SF Pro Display";
+	color: $sec-color;
 	font-weight: bold;
 	letter-spacing: 0.1;
     text-align: center;
@@ -128,11 +126,9 @@
 
 .activeTab {
     border-bottom-width: 2%;
-    border-bottom-color: #BC4C27;
+    border-bottom-color: $primary-color;
 
 }
-
-
 
 // list styling
 .alginList {
@@ -141,22 +137,19 @@
 }
 
 .sub-title {
-	color: #7D7D7D;
-	font-family: "SF Pro Display";
+	color: $sec-color;
     font-weight: 500;
     letter-spacing: 0.1;
-	border-bottom-color: #BC4C27;
+	border-bottom-color: $primary-color;
     border-bottom-width: 2dp;
     padding-bottom: 1dp;
 }
 
 .sub-title-two {
 	color: black;
-	font-family: "SF Pro Display";
     font-weight: 500;
     margin-top: 3%;
 }
-
 
 .item-list {
     border-bottom-width: 0.5px;
@@ -171,7 +164,6 @@
 
 .label-color  {
     color: black;
-    font-family: "SF Pro Display";
     font-weight: 300;
 }
 
