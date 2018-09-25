@@ -1,0 +1,66 @@
+<GridLayout rows="*"  columns="*" class="page page-padding" (loaded)="onLoaded()">
+  <StackLayout>
+    <GridLayout rows="auto,auto" columns="*" class="image-card">
+      <GridLayout>
+        <Image height="191dp" class="image" stretch="aspectfill" src="https://images.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg?auto=compress&cs=tinysrgb&h=350"></Image>
+        <Label text="&#xe87e;" class="font-12 md-icon align-icon heart" horizontalAlignment="left" verticalAlignment="top"
+          textWrap="true"></Label>
+        <Label text="&#xe5cd;" class="font-26 md-icon close-icon align-icon " horizontalAlignment="right"
+          verticalAlignment="top" textWrap="true"></Label>
+      </GridLayout>
+
+      <StackLayout row="1" horizontalAlignment="center">
+        <Label text="Erwten - Tropisch fruit Smoothie" horizontalAlignment="center" class="font-18 text-center card-title"
+          textWrap="true"></Label>
+        <GridLayout horizontalAlignment="center" verticalAlignment="top">
+          <Label text="0." class="number-styling font-40" textWrap="true"></Label>
+          <Label text="50" class="small-number-styling font-20" textWrap="true"></Label>
+        </GridLayout>
+
+        <GridLayout rows="auto" verticalAlignment="bottom" columns="*,*" class="alignbtn">
+          <GridLayout rows="*" columns="auto,*" class="alignLabel">
+            <Label col="0" text='&#xe556;' verticalAlignment="top" class='md-icon  icon-color font-20'></Label>
+            <Label col="1" text="Gezond" verticalAlignment="top" class="font-12 " textWrap="true"></Label>
+
+            <Label col="0" text='&#xe556;' verticalAlignment="bottom" class='md-icon icon-color extra-margin '></Label>
+            <Label col="1" text="73" verticalAlignment="bottom" class="font-12 extra-margin" textWrap="true"></Label>
+          </GridLayout>
+
+          <GridLayout col="1" horizontalAlignment="right" columns="*,auto,*" class="align-textField">
+            <Label text="-" class="  btn-styling min-color text-center" textWrap="true"></Label>
+            <TextField col="1" text="1" class="textfield"></TextField>
+            <Label text="&#xe145;" col="2" class=" md-icon font-20  btn-styling add text-center" textWrap="true"></Label>
+          </GridLayout>
+
+        </GridLayout>
+        <GridLayout rows="auto" columns="*,*" row="2" class="tabs-border">
+          <Label text="Ingrediënten" class="tabs font-12 " textWrap="true"></Label>
+          <Label text="informatie" class="tabs font-12 " col="1" textWrap="true"></Label>
+        </GridLayout>
+      </StackLayout>
+    </GridLayout>
+
+    <StackLayout #listview class="alginList" horizontalAlignment="center">
+
+      <Label text="Voedingswaarden" class="sub-title h6" textWrap="true"></Label>
+      <Label text="Voedingswaarden per 100 MLT" class="sub-title-two item-list h6" textWrap="true"></Label>
+      <StackLayout>
+        <ScrollView>
+          <StackLayout class="scrollPadding">
+            <ng-container *ngFor="let item of heroes">
+              <GridLayout rows="*" *ngIf="!item.subTitle" columns="8*,3*" class="item-list">
+                <Label [text]="item.title" class="h6 label-color  font-12"> </Label>
+                <Label col="1" [text]="item.value" class="text-left" class="h6 label-color font-12 "> </Label>
+              </GridLayout>
+              <GridLayout rows="*" *ngIf="item.subTitle" columns="8*,3*" class="item-list">
+                <Label [text]="item.subTitle" class="h6 label-color sub-info  font-12" textWrap="true"></Label>
+                <Label col="1" [text]="item.value" class="text-left" class="h6 label-color font-12 "> </Label>
+              </GridLayout>
+            </ng-container>
+          </StackLayout>
+        </ScrollView>
+      </StackLayout>
+    </StackLayout>
+  </StackLayout>
+
+</GridLayout>

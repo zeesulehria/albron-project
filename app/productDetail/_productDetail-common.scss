@@ -1,0 +1,180 @@
+@import '../theme/sass/index';
+
+.page-padding {
+    padding: 5%;
+    margin-top: -50dp;
+    padding-top: 50dp;
+    background-color: #eeeeee;
+}
+
+.image-card {
+    // height: 64%;
+    vertical-align: top;
+    margin: 2.7% 9.73% 0% 9.73%;
+    border-radius: 0 0 8dp 8dp;
+    border-width: 0.5dp;
+    border-color: rgba(255,255,255,0.8);
+    background-color: white;
+}
+
+
+
+.image {
+    z-index: 0;
+}
+
+.md-icon {
+    font-family: $material-icon-font;
+}
+
+.extra-margin {
+    padding-top: 22dp;
+}
+
+.close-icon {
+    color: rgb(128, 128, 128);
+    padding: 10% 5% 0% 18%;
+    z-index: 1;
+}
+
+.alignLabel {
+    margin-top: 20%;
+    padding-bottom: 5dp;
+}
+
+.card-title {
+	color: #333333;
+	font-weight: 600;
+    margin-top: 7dp;
+    width: 64%;
+}
+
+.align-textField {
+    padding-left: 10dp;
+}
+
+.card-label {
+    color: #5B4E46;
+    vertical-align: middle;
+    padding: 7% 0% 0% 10%;
+}
+
+.min-margin {
+    margin-top: 60dp;
+}
+
+.icon-color {
+    color: #AAAAAA;
+    padding-right: 4%;
+}
+
+.number-styling {
+	color: #BC4C27;
+	font-family: "SF Pro Display";
+    font-weight: bold;
+}
+
+.heart {
+    color: #BC4C27;
+    padding: 17% 5% 0% 18%;
+    z-index: 1;
+}
+
+.small-number-styling {
+	color: #BC4C27;
+    font-weight: 900;
+    padding: 0% 0% 14% 27%;
+}
+
+.btn-styling {
+    border-width: 0.5dp;
+	border-radius: 8dp;
+    border-color: rgba(53, 53, 53,0.3);
+    // padding:8% 0% 8% 0%;;
+    height: 32dp;
+    width: 32dp;
+}
+
+.add {
+    background-color: #A0BF37;
+    color: white;
+}
+
+.textfield {
+    width: 30%;
+    text-align: center;
+    font-size: 14;
+    color: rgba(197, 197, 197, 0.863);
+}
+
+.alignbtn {
+    margin: 14dp 3% 5% 8%;
+    padding-bottom: 3dp;
+}
+
+.tabs-border {
+    border-top-width: 1dp;
+    border-top-color: rgba(233, 230, 229,0.7) ;
+}
+
+.tabs {
+    padding:12% 0% 12% 0%;
+	color: #7D7D7D;
+	font-family: "SF Pro Display";
+	font-weight: bold;
+	letter-spacing: 0.1;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom-color: #BC4C27;
+    border-bottom-width: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+
+// list styling
+.alginList {
+    width: 88%;
+    margin-top: 3%;
+}
+
+.sub-title {
+	color: #7D7D7D;
+	font-family: "SF Pro Display";
+	font-size: 14;
+    font-weight: 500;
+    letter-spacing: 0.1;
+	border-bottom-color: #BC4C27;
+	border-bottom-width: 2dp;
+}
+
+.sub-title-two {
+	color: black;
+	font-family: "SF Pro Display";
+    font-size: 12;
+    font-weight: 500;
+    margin-top: 3%;
+}
+
+
+.item-list {
+    border-bottom-width: 0.5px;
+    border-bottom-color:rgba(99, 99, 99,0.5);
+    padding-top: 2dp;
+    padding-left: 2dp;
+}
+
+.sub-info {
+    padding-left: 22%;
+}
+
+.label-color  {
+    color: black;
+    font-family: "SF Pro Display";
+    font-weight: 300;
+}
+
+.scrollPadding {
+    padding-bottom: 40dp;
+}
