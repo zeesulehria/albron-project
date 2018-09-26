@@ -31,7 +31,7 @@
 }
 
 .paddingLeftFirst {
-    margin-left: 44dp;
+    margin-left: 14dp;
 }
 
 .item-list-padding {
@@ -46,7 +46,6 @@
     font-weight: bold;
 }
 
-
 .small-number-styling {
     font-weight: 900;
     padding: 10% 0% 20% 20%;
@@ -60,6 +59,7 @@
     color: $primary-color;
 }
 
+
 .title-item-list {
     color: rgba(51,51,51,1);
     font-family: "SF Pro Display";
@@ -68,4 +68,13 @@
 
 .list-item-info {
     padding: 5dp 5dp -3dp 5dp;
+}
+
+.android {
+    width: 210dp;
+    height: 70dp;
+}
+
+.imageandroid {
+    width: 84dp;
 }

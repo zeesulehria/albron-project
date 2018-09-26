@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { DataService } from '~/services/data.service';
 import * as _ from "lodash";
 import * as platformModule from "tns-core-modules/platform";
+import { Page } from 'tns-core-modules/ui/page/page';
 
 @Component({
   selector: 'app-productList',
@@ -24,7 +25,7 @@ export class ProductListComponent implements OnInit {
     }
   ];
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private page: Page) {
     this.items = new BehaviorSubject([
       {
         title: 'Slide 1',
@@ -50,6 +51,8 @@ export class ProductListComponent implements OnInit {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     this.containerHeight = deviceHeight * 0.3;
     this.bottomMenu = deviceHeight * 0.07;
+
+    this.page.actionBarHidden = true;
   }
 
   get tabs() {

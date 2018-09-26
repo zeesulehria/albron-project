@@ -14,11 +14,13 @@ export class ItemListComponent implements OnInit {
   @Input() dataItemsList = [];
 
   containerHeight;
+  containerHeightAndroid;
 
   constructor() { }
   ngOnInit() {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     this.containerHeight = deviceHeight * 0.110;
+    this.containerHeightAndroid = deviceHeight * 0.09;
   }
 
 
@@ -68,5 +70,14 @@ export class ItemListComponent implements OnInit {
     }
   }
 
+
+  get isIosBar() {
+    if(isIOS) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
   
 }

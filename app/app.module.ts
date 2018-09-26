@@ -2,7 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
-
+import { NativeScriptCommonModule } from "nativescript-angular/common";
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
@@ -23,7 +23,8 @@ import { DataService } from "~/services/data.service";
       NativeScriptModule,
       AppRoutingModule,
       PagerModule,
-      NativeScriptUIListViewModule
+      NativeScriptUIListViewModule,
+      NativeScriptCommonModule
    ],
    declarations: [
       AppComponent,
