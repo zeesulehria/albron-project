@@ -8,9 +8,20 @@
     background-color: $background;
 }
 
+.top-padding {
+    padding-top: 12dp;
+}
+
 .icon-color {
     color: #AAAAAA;
     padding-right: 4%;
+}
+
+
+.heart {
+    color: $primary-color;
+    padding: 3% 0% 0% 4%;
+    z-index: 1;
 }
 
 .image-label {
@@ -20,12 +31,14 @@
 }
 
 .item-list-padding {
-    padding-left: 14dp;
-    padding-top: 10dp;
+    margin-left: 14dp;
+    border-color: rgba(255,255,255,0.8);
+    border-width: 0.5dp;
+    border-radius: 6%;
+    background-color: rgba(255,255,255,1);
 }
 
 .number-styling {
-
     font-weight: bold;
 }
 
@@ -34,13 +47,13 @@
     font-weight: 900;
     padding: 10% 0% 20% 20%;
 }
+.small-number-styling-new {
+    font-weight: 400;
+    padding: 0% 0% 33% 14%;
+}
 
-.item-list {
-    // height: 80dp;
-    border-color: rgba(255,255,255,0.8);
-    border-width: 0.5dp;
-    border-radius: 8%;
-    background-color: rgba(255,255,255,1);
+.newItem {
+    color: $primary-color;
 }
 
 .title-item-list {
