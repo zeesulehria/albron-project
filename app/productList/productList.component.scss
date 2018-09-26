@@ -2,6 +2,8 @@
 
 .page-padding {
     margin-top: -100dp;
+}
+.page-background {
     background-color: $background;
 }
 
@@ -22,13 +24,13 @@
     font-weight: bold;
     letter-spacing: 0.11px;
     vertical-align: middle;
-    padding: 16dp 25dp  13dp 25dp;
+    padding: 19dp 25dp  13dp 25dp;
     text-transform: uppercase;
 }
 
 .activeTab {
     border-bottom-color: rgba(188,76,39,1);
-    border-bottom-width:2dp;
+    border-bottom-width:3dp;
     color: rgba(188,76,39,1);
 }
 
@@ -38,7 +40,7 @@
 }
 
 .tab-align {
-        border-bottom-width:1dp;
+        border-bottom-width: 2dp;
         border-bottom-color: rgba(188,76,39,1);
         background-color: $background;
 }
@@ -49,4 +51,23 @@
 
 .marginrighttab {
     margin-right: 25dp;
+}
+
+.bottom-bar-item {
+	color: rgba(142,142,147,1);
+	font-family: "SF Pro Text";
+	font-weight: 500;
+    text-align: center;
+    padding-top: 15%;
+}
+
+.image-size {
+    width: 17dp;
+    height: 24dp;
+}
+
+.border-top {
+	border-top-width: 1dp;
+    border-top-color: rgba(204, 204, 204,1);
+    margin-top: 2%;
 }

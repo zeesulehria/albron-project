@@ -30,8 +30,12 @@
     font-family: "SF Pro Text";
 }
 
+.paddingLeftFirst {
+    margin-left: 44dp;
+}
+
 .item-list-padding {
-    margin-left: 14dp;
+    margin-left: 8dp;
     border-color: rgba(255,255,255,0.8);
     border-width: 0.5dp;
     border-radius: 6%;
@@ -60,7 +64,6 @@
     color: rgba(51,51,51,1);
     font-family: "SF Pro Display";
     font-weight: 600;
-    padding-bottom: 4dp;
 }
 
 .list-item-info {
