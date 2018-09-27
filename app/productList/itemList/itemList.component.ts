@@ -6,7 +6,7 @@ import * as platformModule from "tns-core-modules/platform";
 @Component({
   selector: 'app-itemList',
   templateUrl: './itemList.component.html',
-  styleUrls: ['./itemList.component.css'],
+  styleUrls: ['./itemList.css'],
   moduleId: module.id
 })
 export class ItemListComponent implements OnInit {
@@ -78,6 +78,10 @@ export class ItemListComponent implements OnInit {
     else {
       return false;
     }
+  }
+
+  coring() {
+    console.log("working in ");
   }
   
 }

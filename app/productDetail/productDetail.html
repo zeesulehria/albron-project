@@ -5,8 +5,8 @@
     <GridLayout rows="auto,auto" columns="*" class="image-card">
       <GridLayout>
         <Image height="187dp" class="image" stretch="aspectfill" src="https://images.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg?auto=compress&cs=tinysrgb&h=350"></Image>
-        <Label text="&#xe87e;" class="mainFont font-12 md-icon  heart" horizontalAlignment="left"
-          verticalAlignment="top" textWrap="true"></Label>
+        <Label text="&#xe87e;" class="mainFont font-12 md-icon  heart" horizontalAlignment="left" verticalAlignment="top"
+          textWrap="true"></Label>
         <Label text="&#xe5cd;" class="mainFont font-26 md-icon close-icon  " horizontalAlignment="right"
           verticalAlignment="top" textWrap="true"></Label>
       </GridLayout>
@@ -29,9 +29,9 @@
           </GridLayout>
 
           <GridLayout col="1" horizontalAlignment="right" columns="*,auto,*" class="align-textField">
-            <Label text="-" class="btn-styling min-color text-center" textWrap="true"></Label>
-            <TextField col="1" text="1" class="textfield font-14"></TextField>
-            <Label text="&#xe145;" col="2" class=" md-icon font-20  btn-styling add text-center" textWrap="true"></Label>
+            <Label text="-"  (tap)="subtractValue()" [ngClass]="{ tapzoominanimation : onSubtract == true}" class="btn-styling min-color text-center" textWrap="true"></Label>
+            <TextField col="1" [text]="textField" keyboardType="number" class="textfield font-14"></TextField>
+            <Label text="&#xe145;" col="2" (tap)="addValue()" [ngClass]="{ tapzoominanimation : onAdd == true}" class=" md-icon font-20  btn-styling add text-center" textWrap="true"></Label>
           </GridLayout>
 
         </GridLayout>
@@ -54,7 +54,7 @@
             <ng-container *ngFor="let item of heroes">
               <GridLayout rows="*" *ngIf="!item.subTitle" columns="8*,3*" class="item-list">
                 <Label [text]="item.title" class="h6 label-color mainFont font-12"> </Label>
-                <Label col="1" [text]="item.value" class="text-left" class="h6 label-color  mainFont font-12 "> </Label>
+                <Label col="1" [text]="item.value" class="text-left"  class="h6 label-color  mainFont font-12 "> </Label>
               </GridLayout>
               <GridLayout rows="*" *ngIf="item.subTitle" columns="8*,3*" class="item-list">
                 <Label [text]="item.subTitle" class="h6 label-color sub-info mainFont font-12" textWrap="true"></Label>

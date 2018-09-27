@@ -46,10 +46,7 @@
     font-weight: bold;
 }
 
-.small-number-styling {
-    font-weight: 900;
-    padding: 10% 0% 20% 20%;
-}
+
 .small-number-styling-new {
     font-weight: 400;
     padding: 0% 0% 33% 14%;
@@ -64,6 +61,7 @@
     color: rgba(51,51,51,1);
     font-family: "SF Pro Display";
     font-weight: 600;
+    z-index: 0;
 }
 
 .list-item-info {
@@ -78,3 +76,5 @@
 .imageandroid {
     width: 84dp;
 }
+
+

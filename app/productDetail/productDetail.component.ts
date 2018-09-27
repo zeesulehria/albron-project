@@ -12,6 +12,10 @@ export class ProductDetailComponent implements OnInit {
 
   imageHeight;
   activeTab = 'first';
+  textField = 1;
+  onAdd;
+  onSubtract;
+
   heroes = [
     { title: 'Energie Kilojoules (KJ)', value: 19 },
     { title: 'Energie Kilojoules (KJ)', value: 309 },
@@ -35,8 +39,6 @@ export class ProductDetailComponent implements OnInit {
 
   onLoaded() {
     this.listview.nativeElement.height = this.listview.nativeElement.getActualSize().height;
-    // console.dir("+==============="+this.screen.nativeElement.getMeasuredHeight());
-    // this.imageHeight = this.screen.nativeElement.getActualSize().height/3.5;
   }
 
 
@@ -47,5 +49,24 @@ export class ProductDetailComponent implements OnInit {
 
   get isactiveTab () {
     return this.activeTab;
+  }
+
+  addValue() {
+    this.textField = this.textField + 1
+    this.onAdd = true;
+    setTimeout(() => {
+      this.onAdd = false;
+    }, 300);
+  }
+
+  subtractValue() {
+    if(this.textField>=1)
+    {
+      this.onSubtract = true;
+      this.textField = this.textField - 1
+      setTimeout(() => {
+        this.onSubtract = false;
+      }, 300);
+    }
   }
 }
