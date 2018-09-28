@@ -4,6 +4,7 @@ import { DataService } from '~/services/data.service';
 import * as _ from "lodash";
 import * as platformModule from "tns-core-modules/platform";
 import { Page } from 'tns-core-modules/ui/page/page';
+import { HttpClient, HttpHeaders, HttpResponse, HttpParams } from "@angular/common/http";
 
 @Component({
   selector: 'app-productList',
@@ -18,6 +19,7 @@ export class ProductListComponent implements OnInit {
   numItems;
   containerHeight;
   bottomMenu;
+  private serverUrl = "http://52.211.44.71:5555/api/v1/getassortiment";
 
   items: any = [
     {
@@ -25,12 +27,28 @@ export class ProductListComponent implements OnInit {
     }
   ];
 
-  constructor(private dataService: DataService, private page: Page) {
+  constructor(private dataService: DataService, private page: Page, private http: HttpClient) {
     this.items = new BehaviorSubject([
       {
         title: 'Slide 1',
       }
     ]);
+    this.getData({}).subscribe((result) => {
+      console.dir(result);
+      // this.dataService.data[0].ASSORTIMENT = <any>result;
+    })
+  }
+
+  getData(params) {
+    let headers = this.createRequestHeader();
+    return this.http.get(this.serverUrl, { headers: headers, params: params });
+  }
+
+  private createRequestHeader() {
+    let headers = new HttpHeaders({
+      "Content-Type": "application/json",
+    });
+    return headers;
   }
 
   tabChanged(selectedTab, title) {

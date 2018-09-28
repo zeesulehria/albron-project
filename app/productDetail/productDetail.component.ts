@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { screen } from "platform";
 import { DataService } from '~/services/data.service';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
   selector: 'app-productDetail',
@@ -28,7 +29,7 @@ export class ProductDetailComponent implements OnInit {
     { title: 'Energie Kilojoules (KJ)', value: 72 },
   ];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private _router: RouterExtensions) { }
 
   ngOnInit() {
     this.dataService.productDetail;
@@ -68,5 +69,9 @@ export class ProductDetailComponent implements OnInit {
         this.onSubtract = false;
       }, 300);
     }
+  }
+
+  goBack() {
+    this._router.back();
   }
 }
