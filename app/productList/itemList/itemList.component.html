@@ -8,7 +8,8 @@
       <Gridlayout (tap)="detail(item)" [ngClass]="{ android : !isIosBar, paddingLeftFirst : i <= 4 }"
         class="item-list-padding" horizontalAlignment="left" columns="2*,3*">
         <GridLayout>
-          <Image  [ngClass]="{ imageandroid : !isIosBar == 1 }" stretch="fit" [src]="item?.thumbnailURL"></Image>
+            <!-- [ngClass]="{ imageandroid : !isIosBar == 1 }"  -->
+          <Image   width ="120dp" height="500dp" stretch="fit" [src]="item?.thumbnailURL"></Image>
           <Label text="&#xe87e;" class="mainFont font-12 md-icon  heart" horizontalAlignment="left" verticalAlignment="top"
             textWrap="true"></Label>
           <GridLayout row="1" rows="*" columns="*,*" verticalAlignment="bottom" class="image-label">
@@ -16,6 +17,7 @@
             <Label col="1" [text]="item?.kcal" class="mainFont  text-left font-10 "  textWrap="true"></Label>
           </GridLayout>
         </GridLayout>
+
 
         <StackLayout col="1" class="list-item-info">
           <Label [text]="item?.name"  class="font-13 title-item-list" textWrap="true"></Label>

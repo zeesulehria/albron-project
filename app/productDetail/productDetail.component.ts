@@ -12,6 +12,7 @@ import * as platformModule from "tns-core-modules/platform";
 export class ProductDetailComponent implements OnInit {
 
   imageHeight;
+  imageWidth;
   activeTab = 'first';
   itemDetailList = [];
   textField = 1;
@@ -23,10 +24,14 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
-    this.imageHeight = deviceHeight * 0.14;
+    let deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
+    this.imageHeight = deviceHeight * 0.15;
+    this.imageWidth = deviceWidth * 0.9;
      this.itemDetail = this.dataService.productDetail();
      this.changeTab('first');
   }
+  
+
 
   changeTab(args)
   {

@@ -24,6 +24,7 @@ export class ItemListComponent implements OnInit {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     this.containerHeight = deviceHeight * 0.110;
     this.containerHeightAndroid = deviceHeight * 0.09;
+
   }
 
 
