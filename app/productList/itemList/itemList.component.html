@@ -5,10 +5,10 @@
     <ng-template tkListItemTemplate let-item="item" let-i="index">
      <GridLayout rows="" columns="" [ngClass]="{  paddingLeftFirst : i <= 4 }">
          
-      <Gridlayout   [nsRouterLink]="['/productDetail']" [ngClass]="{ android : !isIosBar, paddingLeftFirst : i <= 4 }"
+      <Gridlayout (tap)="detail(item)" [ngClass]="{ android : !isIosBar, paddingLeftFirst : i <= 4 }"
         class="item-list-padding" horizontalAlignment="left" columns="2*,3*">
         <GridLayout>
-          <Image class="image" [ngClass]="{ imageandroid : !isIosBar == 1 }" stretch="aspectFill" [src]="item?.thumbnailURL"></Image>
+          <Image  [ngClass]="{ imageandroid : !isIosBar == 1 }" stretch="fit" [src]="item?.thumbnailURL"></Image>
           <Label text="&#xe87e;" class="mainFont font-12 md-icon  heart" horizontalAlignment="left" verticalAlignment="top"
             textWrap="true"></Label>
           <GridLayout row="1" rows="*" columns="*,*" verticalAlignment="bottom" class="image-label">
@@ -20,8 +20,8 @@
         <StackLayout col="1" class="list-item-info">
           <Label [text]="item?.name"  class="font-13 title-item-list" textWrap="true"></Label>
           <GridLayout>
-            <Label text="2" class="number-styling font-27" textWrap="true"></Label>
-            <Label text="1" class="small-number-styling "  Wrap="true"></Label> 
+            <Label [text]="getNumber(item?.price)" class="number-styling font-27" textWrap="true"></Label>
+            <Label [text]="getDecimal(item?.price)" class="small-number-styling "  Wrap="true"></Label> 
             <!-- <Label text="Nu" class="small-number-styling-new font-9"  textWrap="true"></Label> -->
             <!-- [ngClass]="{newItem : true == true}"
             [ngClass]="{newItem : true == true}"

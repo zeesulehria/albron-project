@@ -15,68 +15,67 @@ import { HttpClient, HttpHeaders, HttpResponse, HttpParams } from "@angular/comm
 export class ProductListComponent implements OnInit {
 
   currentIndexTab = 0;
+  listItemsData;
   listItems;
   numItems;
   containerHeight;
   bottomMenu;
-  private serverUrl = "http://52.211.44.71:5555/api/v1/getassortiment";
 
+  tabsCategory = [];
   items: any = [
     {
       title: 'Slide 1',
     }
   ];
 
-  constructor(private dataService: DataService, private page: Page, private http: HttpClient) {
+  constructor(private dataService: DataService, private page: Page) {
     this.items = new BehaviorSubject([
       {
         title: 'Slide 1',
       }
     ]);
-    this.getData({}).subscribe((result) => {
-      console.dir(result);
-      // this.dataService.data[0].ASSORTIMENT = <any>result;
-    })
   }
 
-  getData(params) {
-    let headers = this.createRequestHeader();
-    return this.http.get(this.serverUrl, { headers: headers, params: params });
+  ngOnInit(): void {
+    let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
+    this.containerHeight = deviceHeight * 0.3;
+    this.bottomMenu = deviceHeight * 0.07;
+    this.page.actionBarHidden = true;
+    this.getListItems();
   }
 
-  private createRequestHeader() {
-    let headers = new HttpHeaders({
-      "Content-Type": "application/json",
+  getListItems() {
+    this.dataService.getData().subscribe((result) => {
+      // this.dataItems = result;
+      this.listItemsData = result;
+      this.dataService.applicationData = this.listItemsData;
+      this.getList();
+    }, (error) => {
+      console.dir(error);
     });
-    return headers;
+  }
+
+  getList(){
+    this.listItems = (this.listItemsData).ASSORTIMENT[0].products;
+    this.tabsCategory = _.map((this.listItemsData).ASSORTIMENT, "category");
+  }
+
+  get tabs() {
+    return this.tabsCategory;
   }
 
   tabChanged(selectedTab, title) {
     this.currentIndexTab = selectedTab;
-    let array = _.filter(this.dataService.data[0].ASSORTIMENT, function (o) {
-      return o.category == title;
-    });
+      let array = _.filter(this.listItemsData.ASSORTIMENT, function (o) {
+        return o.category == title;
+      });
     this.listItems = array[0].products;
-    // this.listItems = _.map(this.dataService.data[0].ASSORTIMENT, title)
+    console.dir(this.listItems);
   }
 
   isActiveTab() {
     return this.currentIndexTab;
   }
 
-  ngOnInit(): void {
-    (<any>this.listItems) = this.dataService.data[0].ASSORTIMENT[0].products;
-    let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
-    this.containerHeight = deviceHeight * 0.3;
-    this.bottomMenu = deviceHeight * 0.07;
-
-    this.page.actionBarHidden = true;
-  }
-
-  get tabs() {
-    return _.map(this.dataService.data[0].ASSORTIMENT, 'category');
-  }
-
-
-
 }
+

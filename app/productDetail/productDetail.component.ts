@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { screen } from "platform";
 import { DataService } from '~/services/data.service';
 import { RouterExtensions } from 'nativescript-angular/router';
+import * as platformModule from "tns-core-modules/platform";
 
 @Component({
   selector: 'app-productDetail',
@@ -13,40 +13,47 @@ export class ProductDetailComponent implements OnInit {
 
   imageHeight;
   activeTab = 'first';
+  itemDetailList = [];
   textField = 1;
   onAdd;
   onSubtract;
-
-  heroes = [
-    { title: 'Energie Kilojoules (KJ)', value: 19 },
-    { title: 'Energie Kilojoules (KJ)', value: 309 },
-    { title: 'Energie Kilojoules (KJ)', value: 309 },
-    { title: 'Energie Kilojoules (KJ)', value: 72 },
-    { subTitle: 'verzadigde vetzuren (g)', value: 1.1 },
-    { title: 'Energie Kilojoules (KJ)', value: 309 },
-    { title: 'Energie Kilojoules (KJ)', value: 309 },
-    { subTitle: 'verzadigde vetzuren (g)', value: 1.1 },
-    { title: 'Energie Kilojoules (KJ)', value: 72 },
-  ];
+  itemDetail = [];
 
   constructor(private dataService: DataService, private _router: RouterExtensions) { }
 
   ngOnInit() {
-    this.dataService.productDetail;
+    let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
+    this.imageHeight = deviceHeight * 0.14;
+     this.itemDetail = this.dataService.productDetail();
+     this.changeTab('first');
   }
-
-  @ViewChild('listview') listview: ElementRef;
-  @ViewChild('screen') screen: ElementRef;
-
-  onLoaded() {
-    this.listview.nativeElement.height = this.listview.nativeElement.getActualSize().height;
-  }
-
 
   changeTab(args)
   {
     this.activeTab = args;
+    if (args === 'first') {
+      this.itemDetailList = (<any>this.itemDetail).informatie;
+    } 
+    else if(args === 'second') {
+      this.itemDetailList = (<any>this.itemDetail).ingredienten;
+    }
   }
+
+  get getDetail(){
+    return this.itemDetailList;
+  } 
+
+  getNumber(number) {
+    let integerPart = parseInt(number);
+    return integerPart;
+  }
+
+  getDecimal(number) {
+    let integerPart = parseInt(number);
+    let decimalPart = number - integerPart;
+    return decimalPart;
+  }
+
 
   get isactiveTab () {
     return this.activeTab;

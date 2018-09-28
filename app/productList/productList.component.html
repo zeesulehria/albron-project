@@ -1,8 +1,8 @@
 
 <GridLayout rows="auto,*" >
-  <GridLayout class="page-padding "  [height]="containerHeight" rows="*" columns="*" verticalAlignment="top">
+  <GridLayout  class="page-padding "  [height]="containerHeight" rows="*" columns="*" verticalAlignment="top">
     <Image stretch="aspectFill" src="https://www.thehindubusinessline.com/migration_catalog/article19347481.ece/alternates/WIDE_660/BL20_MAIN_THINK1"></Image>
-    <Label text="Assortiment" class="large-title" verticalAlignment="bottom" textWrap="true"></Label>
+    <Label (tap)="getListItems()" text="Assortiment" class="large-title" verticalAlignment="bottom" textWrap="true"></Label>
   </GridLayout>
 
   <GridLayout  class="page-background" row="1" rows="auto,*,auto" columns="*">
@@ -17,6 +17,7 @@
       </ScrollView>
     </GridLayout>
 
+
     <Pager row="1" disableSwipe="true" [items]="items | async" >
       <ng-template let-i="index" let-item="item">
             <GridLayout >
@@ -25,7 +26,7 @@
       </ng-template>
     </Pager>
 
-    <GridLayout rows="*" columns="*,*,*,*,*" row="2" backgroundColor="yellow" class="border-top" [height]="bottomMenu">
+    <GridLayout  (tap)="getListItems()" rows="*" columns="*,*,*,*,*" row="2" backgroundColor="yellow" class="border-top" [height]="bottomMenu">
         <GridLayout col="0">
             <Image class="image-size" src="https://www.thehindubusinessline.com/migration_catalog/article19347481.ece/alternates/WIDE_660/BL20_MAIN_THINK1"></Image>
             <Label text="Home"   class="bottom-bar-item page-background  font-10" textWrap="true"></Label>

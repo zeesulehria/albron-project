@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { screen, isIOS } from "platform";
 import { Color } from 'tns-core-modules/color/color';
 import * as platformModule from "tns-core-modules/platform";
+import { RouterExtensions } from 'nativescript-angular/router';
+import { DataService } from '~/services/data.service';
 
 @Component({
   selector: 'app-itemList',
@@ -16,7 +18,8 @@ export class ItemListComponent implements OnInit {
   containerHeight;
   containerHeightAndroid;
 
-  constructor() { }
+  constructor(private routerExtensions: RouterExtensions, private dataService: DataService) { }
+
   ngOnInit() {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     this.containerHeight = deviceHeight * 0.110;
@@ -66,13 +69,13 @@ export class ItemListComponent implements OnInit {
       var newcolor = new Color("transparent");
       args.ios.backgroundView.backgroundColor = newcolor.ios;
     }
-    if(args.index <= 4) { 
+    if (args.index <= 4) {
     }
   }
 
 
   get isIosBar() {
-    if(isIOS) {
+    if (isIOS) {
       return true;
     }
     else {
@@ -80,8 +83,15 @@ export class ItemListComponent implements OnInit {
     }
   }
 
-  coring() {
-    console.log("working in ");
+  detail(item) {
+    this.dataService.getItemDetail(item);
+    this.routerExtensions.navigate(['/productDetail'], {
+      transition: {
+        name: 'fade',
+        curve: 'linear'
+      }
+    });
   }
-  
+
 }
+
