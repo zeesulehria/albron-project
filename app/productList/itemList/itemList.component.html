@@ -9,7 +9,7 @@
         class="item-list-padding" horizontalAlignment="left" columns="2*,3*">
         <GridLayout>
             <!-- [ngClass]="{ imageandroid : !isIosBar == 1 }"  -->
-          <Image   width ="120dp" height="500dp" stretch="fit" [src]="item?.thumbnailURL"></Image>
+          <Image   width ="120dp" height="500dp" stretch="aspectFill" [src]="item?.thumbnailURL"></Image>
           <Label text="&#xe87e;" class="mainFont font-12 md-icon  heart" horizontalAlignment="left" verticalAlignment="top"
             textWrap="true"></Label>
           <GridLayout row="1" rows="*" columns="*,*" verticalAlignment="bottom" class="image-label">

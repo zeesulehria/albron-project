@@ -3,8 +3,8 @@
 <GridLayout rows="*" #screen columns="*" class="page page-padding" >
   <StackLayout>
     <GridLayout rows="auto,auto" columns="*" class="image-card">
-      <GridLayout>
-        <Image [height]="imageHeight" [width]="imageWidth" class="image" stretch="aspectFit" [src]="itemDetail.thumbnailURL"></Image>
+      <GridLayout [height]="imageHeight">
+        <Image [height]="imageHeight" [width]="imageWidth" class="image" stretch="aspectFill" [src]="itemDetail.thumbnailURL"></Image>
         <Label text="&#xe87e;" class="mainFont font-12 md-icon  heart" horizontalAlignment="left" verticalAlignment="top"
           textWrap="true"></Label>
         <Label text="&#xe5cd;" (tap)="goBack()" class="mainFont font-26 md-icon close-icon  " horizontalAlignment="right"
