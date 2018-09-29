@@ -20,7 +20,6 @@ export class ProductListComponent implements OnInit {
   listItems;
   numItems;
   containerHeight;
-  bottomMenu;
 
   tabsCategory = [];
   items: any = [
@@ -40,7 +39,6 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     this.containerHeight = deviceHeight * 0.3;
-    this.bottomMenu = deviceHeight * 0.08;
     this.page.actionBarHidden = true;
     this.getListItems();
   }
@@ -76,14 +74,6 @@ export class ProductListComponent implements OnInit {
 
   isActiveTab() {
     return this.currentIndexTab;
-  }
-
-  isActiveBottomTab() {
-    return this.currentIndexBottomTab;
-  }
-
-  tabBottomChanged(currentIndexBottomTab) {
-    this.currentIndexBottomTab = currentIndexBottomTab;
   }
 }
 

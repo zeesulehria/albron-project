@@ -11,9 +11,9 @@
             <Image stretch="aspectfill" [src]="item?.thumbnailURL"></Image>
             <GridLayout class="heart" rows="auto" columns="auto"  horizontalAlignment="left"
               verticalAlignment="top">
-              <Label text="&#xe87e;" (tap)="changeHeart()" *ngIf="favouriteValue" class="mainFont font-14 md-icon  "
+              <Label text="&#xe87e;" (tap)="changeHeart()" [visibility]="favouriteValue ? 'visible' : 'hidden'"  class="mainFont font-14 md-icon  "
                 textWrap="true"></Label>
-                <Label text="&#xf004;" (tap)="changeHeart()" *ngIf="!favouriteValue" class="mainFont font-13 fontAweasome "
+                <Label text="&#xf004;" (tap)="changeHeart()" [visibility]="!favouriteValue ? 'visible' : 'hidden'" class="mainFont font-13 fontAweasome "
                   horizontalAlignment="left" verticalAlignment="top" textWrap="true"></Label>
             </GridLayout>
 

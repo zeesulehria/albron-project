@@ -15,6 +15,9 @@ import { PagerModule } from "nativescript-pager/angular";
 import { ItemListComponent } from "~/productList/itemList/itemList.component";
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 import { DataService } from "~/services/data.service";
+import { HomeComponent } from './home/home.component';
+import { BottomBarComponent } from './bottomBar/bottomBar.component';
+
 
 @NgModule({
    bootstrap: [
@@ -32,9 +35,13 @@ import { DataService } from "~/services/data.service";
       AppComponent,
       ProductDetailComponent,
       ProductListComponent,
-      ItemListComponent
+      ItemListComponent,
+      HomeComponent,
+      BottomBarComponent
    ],
-   providers: [DataService],
+   providers: [
+      DataService
+   ],
    schemas: [
       NO_ERRORS_SCHEMA
    ]

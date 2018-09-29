@@ -25,36 +25,7 @@
             </GridLayout>
       </ng-template>
     </Pager>
-
-    <GridLayout  (tap)="getListItems()" rows="*" columns="*,*,*,*,*" row="2"  class="border-top" [height]="bottomMenu">
-        <GridLayout col="0" (tap)="tabBottomChanged(0)">
-            <Image class="image-size" src="res://homeactive" *ngIf="isActiveBottomTab() == 0"></Image>
-            <Image class="image-size" src="res://home" *ngIf="isActiveBottomTab() != 0"></Image>
-            <Label text="Home" backgroundColor="transparent" [ngClass]="{ activebottomtap : isActiveBottomTab() == 0 }"  class="bottom-bar-item page-background  font-10" textWrap="true"></Label>
-        </GridLayout>
-        <!-- Assortiment -->
-        <GridLayout col="1"  (tap)="tabBottomChanged(1)">
-            <Image class="image-size" src="res://assortimentactive" *ngIf="isActiveBottomTab() == 1"></Image>
-            <Image class="image-size" src="res://assortiment"  *ngIf="isActiveBottomTab() != 1" ></Image>
-            <Label text="Assortiment" backgroundColor="transparent" [ngClass]="{ activebottomtap : isActiveBottomTab() == 1 }"  class="bottom-bar-item page-background font-10" textWrap="true"></Label>
-        </GridLayout>
-        <GridLayout col="2" (tap)="tabBottomChanged(2)">
-            <Image class="image-size" src="res://resturantactive" *ngIf="isActiveBottomTab() == 2"></Image>
-            <Image class="image-size" src="res://resturant"  *ngIf="isActiveBottomTab() != 2"></Image>
-            <Label text="Resturant" backgroundColor="transparent" [ngClass]="{ activebottomtap : isActiveBottomTab() == 2 }"  class="bottom-bar-item page-background font-10" textWrap="true"></Label>
-        </GridLayout>
-        <GridLayout col="3" (tap)="tabBottomChanged(3)">
-          <Image class="image-size" src="res://allergenenactive" *ngIf="isActiveBottomTab() == 3"></Image>
-            <Image class="image-size" src="res://allergenen"  *ngIf="isActiveBottomTab() != 3"></Image>
-            <Label text="Allergenen"  backgroundColor="transparent" [ngClass]="{ activebottomtap : isActiveBottomTab() == 3 }"  class="bottom-bar-item page-background  font-10" textWrap="true"></Label>
-        </GridLayout>
-        <GridLayout col="4" (tap)="tabBottomChanged(4)">
-            <Image class="image-size" src="res://" *ngIf="isActiveBottomTab() == 4"></Image>
-            <Image class="image-size" src="res://"  *ngIf="isActiveBottomTab() != 4"></Image>
-            <Label text="Meer" backgroundColor="transparent" [ngClass]="{ activebottomtap : isActiveBottomTab() == 4 }"  class="bottom-bar-item page-background font-10" textWrap="true"></Label>
-        </GridLayout>
-       
-    </GridLayout>
   </GridLayout>
 </GridLayout>
+
 
