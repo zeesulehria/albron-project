@@ -25,7 +25,7 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit() {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     let deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
-    this.imageHeight = deviceHeight * 0.15;
+    this.imageHeight = deviceHeight * 0.30;
     this.imageWidth = deviceWidth * 0.9;
      this.itemDetail = this.dataService.productDetail();
      this.changeTab('first');
