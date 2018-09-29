@@ -4,6 +4,10 @@
     font-family: $material-icon-font;
 }
 
+.fontAweasome {
+    font-family: $fontAweasmoe;
+}
+
 .page-background {
     background-color: $background;
 }
@@ -16,7 +20,6 @@
     color: #AAAAAA;
     padding-right: 4%;
 }
-
 
 .heart {
     color: $primary-color;
@@ -77,4 +80,10 @@
     width: 84dp;
 }
 
+.activeIndex {
+    z-index: 1;
+}
 
+.notactiveIndex {
+    z-index: 0;
+}

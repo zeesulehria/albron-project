@@ -15,6 +15,7 @@ import { HttpClient, HttpHeaders, HttpResponse, HttpParams } from "@angular/comm
 export class ProductListComponent implements OnInit {
 
   currentIndexTab = 0;
+  currentIndexBottomTab = 0;
   listItemsData;
   listItems;
   numItems;
@@ -39,7 +40,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     this.containerHeight = deviceHeight * 0.3;
-    this.bottomMenu = deviceHeight * 0.07;
+    this.bottomMenu = deviceHeight * 0.08;
     this.page.actionBarHidden = true;
     this.getListItems();
   }
@@ -77,5 +78,12 @@ export class ProductListComponent implements OnInit {
     return this.currentIndexTab;
   }
 
+  isActiveBottomTab() {
+    return this.currentIndexBottomTab;
+  }
+
+  tabBottomChanged(currentIndexBottomTab) {
+    this.currentIndexBottomTab = currentIndexBottomTab;
+  }
 }
 

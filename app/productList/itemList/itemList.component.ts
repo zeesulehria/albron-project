@@ -17,7 +17,7 @@ export class ItemListComponent implements OnInit {
 
   containerHeight;
   containerHeightAndroid;
-
+  favourite = false;
   constructor(private routerExtensions: RouterExtensions, private dataService: DataService) { }
 
   ngOnInit() {
@@ -39,12 +39,16 @@ export class ItemListComponent implements OnInit {
     return decimalPart;
   }
 
-  listItemHeight = 0;
-  listItemWidth = 0;
-
+  changeHeart() {
+    return this.favourite = !this.favourite;
+  }
 
   ngAfterViewInit() {
     // setTimeout(() => this.init(), 350);
+  }
+
+  get favouriteValue() {
+    return this.favourite;
   }
 
   @ViewChild('list') list: ElementRef;
