@@ -22,7 +22,7 @@
     </GridLayout>
     <GridLayout col="4" (tap)="tabBottomChanged(4)" [nsRouterLink]="['/more']" pageTransition="fade">
         <Image class="image-size" src="res://more" *ngIf="isActiveBottomTab() == 4"></Image>
-        <Image class="image-size" src="res://more"  *ngIf="isActiveBottomTab() != 4"></Image>
+        <Image class="image-size" src="res://moreselected"  *ngIf="isActiveBottomTab() != 4"></Image>
         <Label text="Meer" backgroundColor="transparent" [ngClass]="{ activebottomtap : isActiveBottomTab() == 4 }"  class="bottom-bar-item page-background font-10" textWrap="true"></Label>
     </GridLayout>
 </GridLayout>
