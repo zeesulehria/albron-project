@@ -8,7 +8,7 @@ import { ResturantComponent } from "~/resturant/resturant.component";
 import { AllergenenComponent } from "~/allergenen/allergenen.component";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/home", pathMatch: "full" },
+    { path: "", redirectTo: "/productlist", pathMatch: "full" },
     { path:"productDetail", component: ProductDetailComponent},
     { path:"productlist", component: ProductListComponent},
     { path:"home", component: HomeComponent },

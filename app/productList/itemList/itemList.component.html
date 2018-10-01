@@ -8,18 +8,18 @@
           horizontalAlignment="left" columns="2*,3*">
           <GridLayout>
             <!-- [ngClass]="{ imageandroid : !isIosBar == 1 }"  -->
-            <Image stretch="aspectfill" [src]="item?.thumbnailURL"></Image>
+            <Image stretch="aspectFill" [src]="item?.thumbnailURL"></Image>
             <GridLayout class="heart" rows="auto" columns="auto"  horizontalAlignment="left"
               verticalAlignment="top">
-              <Label text="&#xe87e;" (tap)="changeHeart()" [visibility]="favouriteValue ? 'visible' : 'hidden'"  class="mainFont font-14 md-icon  "
+              <Label text="&#xe87e;" (tap)="changeHeart(item)" [visibility]="item.favourite ? 'visible' : 'hidden'"  class="mainFont font-14 md-icon  "
                 textWrap="true"></Label>
-                <Label text="&#xf004;" (tap)="changeHeart()" [visibility]="!favouriteValue ? 'visible' : 'hidden'" class="mainFont font-13 fontAweasome "
+                <Label text="&#xf004;" (tap)="changeHeart(item)" [visibility]="!item.favourite ? 'visible' : 'hidden'" class="mainFont font-13 fontAweasome "
                   horizontalAlignment="left" verticalAlignment="top" textWrap="true"></Label>
             </GridLayout>
 
             
             <GridLayout row="1" rows="*" columns="*,*" verticalAlignment="bottom" class="image-label">
-              <Label col="0" text='&#xe556;' (tap)="changeHeart()" class='mainFont  text-right md-icon  icon-color font-20'></Label>
+              <Label col="0" text='&#xe556;' (tap)="changeHeart(item)" class='mainFont  text-right md-icon  icon-color font-20'></Label>
               <Label col="1" [text]="item?.kcal" class="mainFont  text-left font-10 " textWrap="true"></Label>
             </GridLayout>
           </GridLayout>
