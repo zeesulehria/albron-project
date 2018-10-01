@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as platformModule from "tns-core-modules/platform";
+import { BottomMenuService } from '~/bottomBar/bottomMenu.service';
 
 @Component({
   selector: 'app-bottomBar',
@@ -8,15 +9,19 @@ import * as platformModule from "tns-core-modules/platform";
   moduleId: module.id
 })
 export class BottomBarComponent implements OnInit {
-  
+
   currentIndexBottomTab = 0;
-  bottomMenu;
-  constructor() { }
+  bottomMenuHeight;
+  constructor(private bottommenu: BottomMenuService) { }
 
   ngOnInit() {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
-    this.bottomMenu = deviceHeight * 0.08;
+    this.bottomMenuHeight = deviceHeight * 0.08;
+    this.bottommenu.bottomMenuVisibility = true;
+  }
 
+  get bottomMenuVisible() {
+    return this.bottommenu.bottomMenuVisibility;
   }
 
   isActiveBottomTab() {

@@ -4,10 +4,16 @@
     font-family: $material-icon-font;
 }
 
+.fontAweasome {
+    font-family: $fontAweasmoe;
+}
+
+.pageUp {
+    margin-top: -100dp;
+}
+
 .page-padding {
-    padding: 5%;
-    margin-top: -50dp;
-    padding-top: 50dp;
+    padding-top: 100dp;
     background-color: $background;
 }
 

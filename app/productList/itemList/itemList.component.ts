@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
-import { screen, isIOS } from "platform";
+import { isIOS } from "platform";
 import { Color } from 'tns-core-modules/color/color';
 import * as platformModule from "tns-core-modules/platform";
 import { RouterExtensions } from 'nativescript-angular/router';
@@ -18,25 +18,23 @@ export class ItemListComponent implements OnInit {
   containerHeight;
   containerHeightAndroid;
   favourite = false;
+
   constructor(private routerExtensions: RouterExtensions, private dataService: DataService) { }
 
   ngOnInit() {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     this.containerHeight = deviceHeight * 0.110;
-    this.containerHeightAndroid = deviceHeight * 0.09;
-
+    this.containerHeightAndroid = deviceHeight * 0.09;    
   }
 
-
   getNumber(number) {
-    let integerPart = parseInt(number);
-    return integerPart;
+    let integerPart = number.match(/(\d+)(\.\d+)?/);
+    return integerPart[1];
   }
 
   getDecimal(number) {
-    let integerPart = parseInt(number);
-    let decimalPart = number - integerPart;
-    return decimalPart;
+    let integerPart = number.match(/(\d+)(\.\d+)?/);
+    return integerPart[2];
   }
 
   changeHeart() {

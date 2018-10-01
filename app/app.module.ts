@@ -17,6 +17,9 @@ import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 import { DataService } from "~/services/data.service";
 import { HomeComponent } from './home/home.component';
 import { BottomBarComponent } from './bottomBar/bottomBar.component';
+import { ResturantComponent } from './resturant/resturant.component';
+import { AllergenenComponent } from './allergenen/allergenen.component';
+import { BottomMenuService } from "~/bottomBar/bottomMenu.service";
 
 
 @NgModule({
@@ -37,10 +40,13 @@ import { BottomBarComponent } from './bottomBar/bottomBar.component';
       ProductListComponent,
       ItemListComponent,
       HomeComponent,
-      BottomBarComponent
+      BottomBarComponent,
+      ResturantComponent,
+      AllergenenComponent
    ],
    providers: [
-      DataService
+      DataService,
+      BottomMenuService
    ],
    schemas: [
       NO_ERRORS_SCHEMA

@@ -1,0 +1,32 @@
+
+<GridLayout rows="auto,*" (loaded)="onLoaded()">
+    <GridLayout  class="page-padding "  [height]="containerHeight" rows="*" columns="*" verticalAlignment="top">
+      <Image stretch="aspectFill" src="res://https://verii.co/wp-content/uploads/2017/04/Summer-hero-9-960x540.jpg"></Image>
+      <Label  text="Assortiment" class="large-title" verticalAlignment="bottom" textWrap="true"></Label>
+    </GridLayout>
+  
+    <GridLayout  class="page-background" row="1" rows="auto,*,auto" columns="*">
+      <GridLayout rows="*" columns="auto" class="tab-align">
+        <ScrollView orientation="horizontal" width="100%" scrollBarIndicatorVisible="false">
+          <StackLayout orientation="horizontal">
+            <ng-container *ngFor="let item of tabs; let i = index;">
+              <Label [text]="item"  (tap)="tabChanged(i,item)" [ngClass]="{ activeTab : i == isActiveTab(), inactivetab : i != isActiveTab(), marginlefttab : i == 0}"
+                class=" tab-item " textWrap="true"></Label>
+            </ng-container>
+          </StackLayout>
+        </ScrollView>
+      </GridLayout>
+  
+  
+      <Pager row="1" disableSwipe="true" [items]="items | async" >
+        <ng-template let-i="index" let-item="item">
+              <GridLayout >
+                <app-itemList [dataItemsList]='listItems'></app-itemList>
+              </GridLayout>
+        </ng-template>
+      </Pager>
+    </GridLayout>
+  </GridLayout>
+  
+  
+  

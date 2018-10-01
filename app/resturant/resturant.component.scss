@@ -1,13 +1,5 @@
 @import '../theme/sass/index';
 
-.page-padding {
-    margin-top: -100dp;
-}
-
-.page-background {
-    background-color: $background;
-}
-
 .large-title {
 	font-family: "SF Pro Display";
 	font-size: 34px;
@@ -18,6 +10,9 @@
     padding-bottom: 3dp;
 }
 
+.page-padding {
+    margin-top: -100dp;
+}
 
 .tab-item {
     font-family: "SF Pro Display";
@@ -44,12 +39,4 @@
         border-bottom-width: 2dp;
         border-bottom-color: rgba(188,76,39,1);
         background-color: $background;
-}
-
-.marginlefttab {
-    margin-left: 25dp;
-}
-
-.marginrighttab {
-    margin-right: 25dp;
 }

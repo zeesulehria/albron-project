@@ -1,19 +1,23 @@
 <ActionBar title="Title" visibility="hidden">
 </ActionBar>
-<GridLayout rows="*" #screen columns="*" class="page page-padding" >
-  <StackLayout>
-    <GridLayout rows="auto,auto" columns="*" class="image-card">
+<GridLayout rows="*" #screen columns="*" class="page pageUp ">
+  <StackLayout class="page-padding">
+    <GridLayout  rows="auto,auto" columns="*" class="image-card">
       <GridLayout [height]="imageHeight">
         <Image [height]="imageHeight" [width]="imageWidth" class="image" stretch="aspectFill" [src]="itemDetail.thumbnailURL"></Image>
-        <Label text="&#xe87e;" class="mainFont font-12 md-icon  heart" horizontalAlignment="left" verticalAlignment="top"
-          textWrap="true"></Label>
+        <GridLayout class="heart" rows="auto" columns="auto" horizontalAlignment="left" verticalAlignment="top">
+          <Label text="&#xe87e;" (tap)="changeHeart()" [visibility]="favouriteValue ? 'visible' : 'hidden'" class="mainFont font-18 md-icon  "
+            textWrap="true"></Label>
+          <Label text="&#xf004;" (tap)="changeHeart()" [visibility]="!favouriteValue ? 'visible' : 'hidden'" class="mainFont font-17 fontAweasome "
+            horizontalAlignment="left" verticalAlignment="top" textWrap="true"></Label>
+        </GridLayout>
         <Label text="&#xe5cd;" (tap)="goBack()" class="mainFont font-26 md-icon close-icon  " horizontalAlignment="right"
           verticalAlignment="top" textWrap="true"></Label>
       </GridLayout>
 
       <StackLayout row="1" horizontalAlignment="center">
-        <Label [text]="itemDetail.name" horizontalAlignment="center" class="mainFont font-18 text-center card-title"
-        textWrap="true"></Label>
+        <Label [text]="itemDetail?.name" horizontalAlignment="center" class="mainFont font-18 text-center card-title"
+          textWrap="true"></Label>
         <GridLayout horizontalAlignment="center" verticalAlignment="top">
           <Label [text]="getNumber(itemDetail.price)" class="number-styling font-40" textWrap="true"></Label>
           <Label [text]="getDecimal(itemDetail.price)" class="small-number-styling font-20" textWrap="true"></Label>
@@ -22,16 +26,18 @@
         <GridLayout rows="auto" verticalAlignment="bottom" columns="*,*" class="alignbtn">
           <GridLayout rows="*" columns="auto,*" class="alignLabel">
             <Label col="0" text='&#xe556;' verticalAlignment="top" class='mainFont md-icon  icon-color font-20'></Label>
-            <Label col="1" text="Gezond" verticalAlignment="top" class="mainFont font-12 " textWrap="true"></Label>
+            <Label col="1" [text]="itemDetail?.typeFood" verticalAlignment="top" class="mainFont font-12 " textWrap="true"></Label>
 
             <Label col="0" text='&#xe556;' verticalAlignment="bottom" class='mainFont md-icon icon-color extra-margin '></Label>
-            <Label col="1" text="73" verticalAlignment="bottom" class="mainFont font-12 extra-margin" textWrap="true"></Label>
+            <Label col="1" [text]="itemDetail?.kcal" verticalAlignment="bottom" class="mainFont font-12 extra-margin" textWrap="true"></Label>
           </GridLayout>
 
           <GridLayout col="1" horizontalAlignment="right" columns="*,auto,*" class="align-textField">
-            <Label text="-"  (tap)="subtractValue()" [ngClass]="{ tapzoominanimation : onSubtract == true}" class="btn-styling min-color text-center" textWrap="true"></Label>
+            <Label text="-" (tap)="subtractValue()" [ngClass]="{ tapzoominanimation : onSubtract == true}" class="btn-styling min-color text-center"
+              textWrap="true"></Label>
             <TextField col="1" [text]="textField" keyboardType="number" class="textfield font-14"></TextField>
-            <Label text="&#xe145;" col="2" (tap)="addValue()" [ngClass]="{ tapzoominanimation : onAdd == true}" class=" md-icon font-20  btn-styling add text-center" textWrap="true"></Label>
+            <Label text="&#xe145;" col="2" (tap)="addValue()" [ngClass]="{ tapzoominanimation : onAdd == true}" class=" md-icon font-20  btn-styling add text-center"
+              textWrap="true"></Label>
           </GridLayout>
 
         </GridLayout>
@@ -46,15 +52,16 @@
 
     <StackLayout #listview class="alginList" horizontalAlignment="center">
 
-      <Label text="Voedingswaarden" class="sub-title font-14 h6 mainFont" textWrap="true"></Label>
-      <Label text="Voedingswaarden per 100 MLT" class="sub-title-two font-12 item-list mainFont h6" textWrap="true"></Label>
+      <Label text="Details" class="sub-title font-14 h6 mainFont" textWrap="true"></Label>
+      <!-- <Label text="Voedingswaarden per 100 MLT" class="sub-title-two font-12 item-list mainFont h6" textWrap="true"></Label> -->
       <StackLayout>
         <ScrollView>
           <StackLayout class="scrollPadding">
             <ng-container *ngFor="let item of getDetail">
               <GridLayout rows="*" columns="8*,3*" class="item-list">
                 <Label [text]="item.name" class="h6 label-color mainFont font-12"> </Label>
-                <Label col="1" [text]="item.content" class="text-left"  class="h6 label-color  mainFont font-12 "> </Label>
+                <Label col="1" [text]="item.content" class="text-left" class="h6 label-color  mainFont font-12 ">
+                </Label>
               </GridLayout>
             </ng-container>
           </StackLayout>

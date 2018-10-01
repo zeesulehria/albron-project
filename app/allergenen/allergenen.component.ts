@@ -1,17 +1,19 @@
-import { Component, OnInit, ViewChild, AfterViewInit, OnChanges } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '~/services/data.service';
-import * as _ from "lodash";
-import * as platformModule from "tns-core-modules/platform";
 import { Page } from 'tns-core-modules/ui/page/page';
+import { BehaviorSubject } from 'rxjs';
+import * as platformModule from "tns-core-modules/platform";
+import * as _ from "lodash";
+
 
 @Component({
-  selector: 'app-productList',
-  templateUrl: './productList.component.html',
-  styleUrls: ['./productList.component.css'],
+  selector: 'app-allergenen',
+  templateUrl: './allergenen.component.html',
+  styleUrls: ['./allergenen.component.scss'],
   moduleId: module.id
 })
-export class ProductListComponent implements OnInit {
+export class AllergenenComponent implements OnInit {
+
 
   currentIndexTab = 0;
   currentIndexBottomTab = 0;
@@ -77,5 +79,5 @@ export class ProductListComponent implements OnInit {
   isActiveTab() {
     return this.currentIndexTab;
   }
-}
 
+}
