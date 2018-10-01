@@ -59,6 +59,8 @@ export class ProductListComponent implements OnInit {
 
   getList(){
     this.listItems = (this.listItemsData).ASSORTIMENT[0].products;
+    this.listItems.push(...this.listItems);
+    this.listItems.push(...this.listItems);
     this.tabsCategory = _.map((this.listItemsData).ASSORTIMENT, "category");
   }
 

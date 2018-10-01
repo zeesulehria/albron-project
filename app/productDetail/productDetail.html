@@ -35,7 +35,7 @@
           <GridLayout col="1" horizontalAlignment="right" columns="*,auto,*" class="align-textField">
             <Label text="-" (tap)="subtractValue()" [ngClass]="{ tapzoominanimation : onSubtract == true}" class="btn-styling min-color text-center"
               textWrap="true"></Label>
-            <TextField col="1" [text]="textField" keyboardType="number" class="textfield font-14"></TextField>
+            <TextField col="1" [text]="textField"  editable= "false" keyboardType="number" class="textfield font-14"></TextField>
             <Label text="&#xe145;" col="2" (tap)="addValue()" [ngClass]="{ tapzoominanimation : onAdd == true}" class=" md-icon font-20  btn-styling add text-center"
               textWrap="true"></Label>
           </GridLayout>

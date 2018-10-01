@@ -1,4 +1,4 @@
-<GridLayout rows="*" *ngIf="bottomMenuVisible" columns="*,*,*,*,*" row="2"  class="border-top" [height]="bottomMenuHeight">
+<GridLayout rows="*" *ngIf="bottomMenuVisible" columns="*,*,*,*,*" row="2"  class="border-top page-background" [height]="bottomMenuHeight">
     <GridLayout col="0" (tap)="tabBottomChanged(0)" [nsRouterLink]="['/productlist']" pageTransition="fade">
         <Image class="image-size" src="res://homeactive" *ngIf="isActiveBottomTab() == 0"></Image>
         <Image class="image-size" src="res://home" *ngIf="isActiveBottomTab() != 0"></Image>
@@ -21,8 +21,8 @@
         <Label text="Allergenen"  backgroundColor="transparent" [ngClass]="{ activebottomtap : isActiveBottomTab() == 3 }"  class="bottom-bar-item page-background  font-10" textWrap="true"></Label>
     </GridLayout>
     <GridLayout col="4" (tap)="tabBottomChanged(4)" [nsRouterLink]="['/productlist']" pageTransition="fade">
-        <Image class="image-size" src="res://more" *ngIf="isActiveBottomTab() == 4"></Image>
-        <Image class="image-size" src="res://moreselected"  *ngIf="isActiveBottomTab() != 4"></Image>
+        <Image class="image-size-more" src="res://moreselected" *ngIf="isActiveBottomTab() == 4"></Image>
+        <Image class="image-size-more" src="res://more"  *ngIf="isActiveBottomTab() != 4"></Image>
         <Label text="Meer" backgroundColor="transparent" [ngClass]="{ activebottomtap : isActiveBottomTab() == 4 }"  class="bottom-bar-item page-background font-10" textWrap="true"></Label>
     </GridLayout>
 </GridLayout>

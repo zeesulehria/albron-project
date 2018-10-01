@@ -16,7 +16,7 @@ export class BottomBarComponent implements OnInit {
 
   ngOnInit() {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
-    this.bottomMenuHeight = deviceHeight * 0.08;
+    this.bottomMenuHeight = deviceHeight * 0.07;
     this.bottommenu.bottomMenuVisibility = true;
   }
 

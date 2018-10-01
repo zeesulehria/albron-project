@@ -96,7 +96,6 @@ export class ProductDetailComponent implements OnInit {
 
   changeHeart() {
     vibrator.vibrate(500);
-    return this.favourite = !this.favourite;
   }
 
 }
