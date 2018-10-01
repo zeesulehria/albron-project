@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this._page.actionBarHidden = true;
+    // this._page.style.marginTop = -20;
   }
 
   

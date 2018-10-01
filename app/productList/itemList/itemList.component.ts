@@ -4,6 +4,8 @@ import { Color } from 'tns-core-modules/color/color';
 import * as platformModule from "tns-core-modules/platform";
 import { RouterExtensions } from 'nativescript-angular/router';
 import { DataService } from '~/services/data.service';
+import { Vibrate } from 'nativescript-vibrate';
+let vibrator = new Vibrate();
 
 @Component({
   selector: 'app-itemList',
@@ -24,7 +26,7 @@ export class ItemListComponent implements OnInit {
   ngOnInit() {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     this.containerHeight = deviceHeight * 0.110;
-    this.containerHeightAndroid = deviceHeight * 0.09;    
+    this.containerHeightAndroid = deviceHeight * 0.09;
   }
 
   getNumber(number) {
@@ -37,8 +39,9 @@ export class ItemListComponent implements OnInit {
     return integerPart[2];
   }
 
-  changeHeart() {
-    return this.favourite = !this.favourite;
+  changeHeart(item) {
+    vibrator.vibrate(500);
+    return item.favourite = !item.favourite;
   }
 
   ngAfterViewInit() {
