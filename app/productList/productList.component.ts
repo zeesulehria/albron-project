@@ -39,7 +39,6 @@ export class ProductListComponent implements OnInit {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     this.containerHeight = deviceHeight * 0.3;
     this.page.actionBarHidden = true;
-    // this.page.style.marginTop = -20;
   }
   
   onLoaded() {

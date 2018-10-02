@@ -28,8 +28,6 @@ export class ItemListComponent implements OnInit {
 
   ngOnInit() {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
-    // this.containerHeight = deviceHeight * 0.120;
-    // this.containerHeightAndroid = deviceHeight * 0.09;
     this._vibrator = new Vibrate();
   }
   
@@ -54,7 +52,6 @@ export class ItemListComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    // setTimeout(() => this.init(), 350);
   }
 
   get favouriteValue() {
@@ -63,18 +60,6 @@ export class ItemListComponent implements OnInit {
 
   @ViewChild('list') list: ElementRef;
   @ViewChild('listItem') listItem: ElementRef;
-
-  // init() {
-  //   if (this.list.nativeElement) {
-  //     this.listItemWidth = this.list.nativeElement.getMeasuredWidth() / screen.mainScreen.scale;
-  //     // this.listItemHeight = this.list.nativeElement.getMeasuredHeight() / screen.mainScreen.scale;
-
-  //     // console.dir(this.listItemHeight/5);
-  //     console.dir(this.listItemWidth/5);
-  //   } else {
-  //     setTimeout(() => this.init(), 100);
-  //   }
-  // }
 
   rdlistloaded(args) {
   }
