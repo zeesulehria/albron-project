@@ -26,20 +26,20 @@
             </GridLayout>
           </GridLayout>
 
-
-          <StackLayout (tap)="detail(item)" col="1" class="list-item-info">
-            <Label [text]="item?.name" class="font-13 title-item-list" textWrap="true"></Label>
-            <GridLayout>
-              <Label [text]="getNumber(item?.price)" class="number-styling font-27" textWrap="true"></Label>
-              <Label [text]="getDecimal(item?.price)" class="small-number-styling " Wrap="true"></Label>
+          <GridLayout rows="*"  (tap)="detail(item)" col="1" class="list-item-info">
+            <Label [text]="item?.name" [height]="containerHeight/1.8" verticalAlignment="top"  row="0" maxLines="2" class="font-13 title-item-list" textWrap="true"></Label>
+            <GridLayout  verticalAlignment="bottom"  rows="auto" columns="auto" >
+              <Label [text]="getNumber(item?.price) +'.'" class="number-styling font-22"></Label>
+              <Label [text]="getDecimal(item?.price)" class="small-number-styling font-13"></Label>
               <!-- <Label text="Nu" class="small-number-styling-new font-9"  textWrap="true"></Label> -->
               <!-- [ngClass]="{newItem : true == true}"
             [ngClass]="{newItem : true == true}"
             [ngClass]="{newItem : true == true}" -->
             </GridLayout>
-          </StackLayout>
+          </GridLayout>
         </Gridlayout>
       </GridLayout>
+
 
     </ng-template>
     <ListViewGridLayout *ngIf="isIosBar" tkListViewLayout scrollDirection="Horizontal" [itemHeight]="containerHeight"

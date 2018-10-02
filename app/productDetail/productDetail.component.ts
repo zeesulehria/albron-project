@@ -2,9 +2,9 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { DataService } from '~/services/data.service';
 import { RouterExtensions } from 'nativescript-angular/router';
 import * as platformModule from "tns-core-modules/platform";
-import { Vibrate } from 'nativescript-vibrate';
+// import { Vibrate } from 'nativescript-vibrate';
 import { BottomMenuService } from '~/bottomBar/bottomMenu.service';
-let vibrator = new Vibrate();
+// let vibrator = new Vibrate();
 @Component({
   selector: 'app-productDetail',
   templateUrl: './productDetail.html',
@@ -13,6 +13,7 @@ let vibrator = new Vibrate();
 })
 export class ProductDetailComponent implements OnInit {
 
+  
   imageHeight;
   imageWidth;
   activeTab = 'first';
@@ -57,7 +58,7 @@ export class ProductDetailComponent implements OnInit {
 
   getDecimal(number) {
     let integerPart = number.match(/(\d+)(\.\d+)?/);
-    return integerPart[2];
+    return integerPart[1];
   }
 
 
@@ -68,7 +69,7 @@ export class ProductDetailComponent implements OnInit {
   addValue() {
     this.textField = this.textField + 1
     this.onAdd = true;
-    vibrator.vibrate(500);
+    // vibrator.vibrate(500);
     setTimeout(() => {
       this.onAdd = false;
     }, 300);
@@ -77,7 +78,7 @@ export class ProductDetailComponent implements OnInit {
   subtractValue() {
     if (this.textField >= 1) {
       this.onSubtract = true;
-      vibrator.vibrate(500);
+      // vibrator.vibrate(500);
       this.textField = this.textField - 1
       setTimeout(() => {
         this.onSubtract = false;
@@ -95,7 +96,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   changeHeart() {
-    vibrator.vibrate(500);
+    // vibrator.vibrate(500);
   }
 
 }

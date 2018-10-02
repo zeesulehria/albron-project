@@ -20,6 +20,7 @@ import { BottomBarComponent } from './bottomBar/bottomBar.component';
 import { ResturantComponent } from './resturant/resturant.component';
 import { AllergenenComponent } from './allergenen/allergenen.component';
 import { BottomMenuService } from "~/bottomBar/bottomMenu.service";
+import { LabelMaxlinesDirective } from "~/theme/label-maxlines.directive";
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { BottomMenuService } from "~/bottomBar/bottomMenu.service";
       HomeComponent,
       BottomBarComponent,
       ResturantComponent,
-      AllergenenComponent
+      AllergenenComponent,
+      LabelMaxlinesDirective
    ],
    providers: [
       DataService,
