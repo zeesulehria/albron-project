@@ -4,7 +4,7 @@
   <StackLayout class="page-padding">
     <GridLayout  rows="auto,auto" columns="*" class="image-card">
       <GridLayout [height]="imageHeight">
-        <Image [height]="imageHeight" [width]="imageWidth" class="image" stretch="aspectFill" [src]="itemDetail.thumbnailURL"></Image>
+        <Image [height]="imageHeight" [width]="imageWidth" class="image" stretch="aspectFit" [src]="itemDetail.thumbnailURL"></Image>
         <GridLayout class="heart" rows="auto" columns="auto" horizontalAlignment="left" verticalAlignment="top">
           <Label text="&#xe87e;" (tap)="changeHeart()" [visibility]="favouriteValue ? 'visible' : 'hidden'" class="mainFont font-18 md-icon  "
             textWrap="true"></Label>

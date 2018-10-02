@@ -1,8 +1,10 @@
 @import 'productDetail-common';
 
 
-.align-textField {
-    padding-left: 10dp;    
-    border-bottom-color: rgb(128, 128, 128);
+.textfield {
+    width: 30%;
+    text-align: center;
+    color: rgba(197, 197, 197, 0.863);
+    border-bottom-color: rgba(197, 197, 197, 0.863);
     border-bottom-width: 1dp;
 }

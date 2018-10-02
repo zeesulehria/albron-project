@@ -2,9 +2,9 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { DataService } from '~/services/data.service';
 import { RouterExtensions } from 'nativescript-angular/router';
 import * as platformModule from "tns-core-modules/platform";
-// import { Vibrate } from 'nativescript-vibrate';
+import { Vibrate } from 'nativescript-vibrate';
 import { BottomMenuService } from '~/bottomBar/bottomMenu.service';
-// let vibrator = new Vibrate();
+
 @Component({
   selector: 'app-productDetail',
   templateUrl: './productDetail.html',
@@ -23,9 +23,11 @@ export class ProductDetailComponent implements OnInit {
   onSubtract;
   itemDetail = [];
   favourite = false;
+  _vibrator;
 
 
-  constructor(private dataService: DataService, private _router: RouterExtensions, private bottomMenuService: BottomMenuService) { }
+  constructor(private dataService: DataService, private _router: RouterExtensions, private bottomMenuService: BottomMenuService) { 
+  }
 
   ngOnInit() {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
@@ -35,6 +37,7 @@ export class ProductDetailComponent implements OnInit {
     this.itemDetail = this.dataService.productDetail();
     this.changeTab('first');
     this.bottomMenuService.bottomMenuVisibility = false;
+    this._vibrator = new Vibrate();
   }
 
   changeTab(args) {
@@ -69,7 +72,7 @@ export class ProductDetailComponent implements OnInit {
   addValue() {
     this.textField = this.textField + 1
     this.onAdd = true;
-    // vibrator.vibrate(500);
+    this._vibrator.vibrate(200);
     setTimeout(() => {
       this.onAdd = false;
     }, 300);
@@ -78,7 +81,7 @@ export class ProductDetailComponent implements OnInit {
   subtractValue() {
     if (this.textField >= 1) {
       this.onSubtract = true;
-      // vibrator.vibrate(500);
+      this._vibrator.vibrate(200);
       this.textField = this.textField - 1
       setTimeout(() => {
         this.onSubtract = false;
@@ -96,7 +99,8 @@ export class ProductDetailComponent implements OnInit {
   }
 
   changeHeart() {
-    // vibrator.vibrate(500);
+    this._vibrator.vibrate(200);
+    this.favourite = !this.favourite;
   }
 
 }

@@ -24,24 +24,17 @@
 .heart {
     color: $primary-color;
     padding: 5% 0% 0% 5%;
-    z-index: 1;
+    z-index: 1
 }
 
-.image-label {
-    background: linear-gradient(180deg, rgba(125,111,102,1) 0%, rgba(91,78,70,1) 100%);
-    color: rgba(255,255,255,1);
-    font-family: "SF Pro Text";
-}
 
-.paddingLeftFirst {
-    margin-left: 14dp;
-}
+
+
 
 .item-list-padding {
     margin-left: 8dp;
     border-color: rgba(255,255,255,0.8);
     border-width: 0.5dp;
-    border-radius: 6%;
     background-color: rgba(255,255,255,1);
 }
 
@@ -63,14 +56,6 @@
     padding: 5dp 5dp -3dp 5dp;
 }
 
-.android {
-    width: 210dp;
-    height: 70dp;
-}
-
-.imageandroid {
-    width: 84dp;
-}
 
 .activeIndex {
     z-index: 1;

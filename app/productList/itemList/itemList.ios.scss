@@ -12,3 +12,20 @@
 .number-styling {
     font-weight: bold;
 }
+
+.image-label {
+    background: linear-gradient(180deg, rgba(125,111,102,1) 0%, rgba(91,78,70,1) 100%);
+    color: rgba(255,255,255,1);
+    font-family: "SF Pro Text";
+    border-bottom-left-radius: 4%;
+}
+
+
+.b-r-l-t {
+    border-top-left-radius: 4%;
+}
+
+.paddingLeftFirst {
+    margin-left: 14dp;
+    border-radius: 6%;
+}

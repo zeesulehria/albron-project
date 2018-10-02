@@ -5,7 +5,7 @@ import * as platformModule from "tns-core-modules/platform";
 import { RouterExtensions } from 'nativescript-angular/router';
 import { DataService } from '~/services/data.service';
 import { Vibrate } from 'nativescript-vibrate';
-// let vibrator = new Vibrate();
+
 
 @Component({
   selector: 'app-itemList',
@@ -20,13 +20,22 @@ export class ItemListComponent implements OnInit {
   containerHeight;
   containerHeightAndroid;
   favourite = false;
+  _vibrator;
 
-  constructor(private routerExtensions: RouterExtensions, private dataService: DataService) { }
+  constructor(private routerExtensions: RouterExtensions, private dataService: DataService) { 
+    
+  }
 
   ngOnInit() {
     let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
-    this.containerHeight = deviceHeight * 0.120;
-    this.containerHeightAndroid = deviceHeight * 0.09;
+    // this.containerHeight = deviceHeight * 0.120;
+    // this.containerHeightAndroid = deviceHeight * 0.09;
+    this._vibrator = new Vibrate();
+  }
+  
+  get getHeightAndriod() {
+      let deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
+      return this.containerHeight = deviceHeight * 0.120;
   }
 
   getNumber(number) {
@@ -40,7 +49,7 @@ export class ItemListComponent implements OnInit {
   }
 
   changeHeart(item) {
-    // vibrator.vibrate(500);
+    this._vibrator.vibrate(200);
     return item.favourite = !item.favourite;
   }
 

@@ -4,7 +4,7 @@
     <ng-template tkListItemTemplate let-item="item" let-i="index">
       <GridLayout rows="" columns="" [ngClass]="{  paddingLeftFirst : i <= 4 }">
 
-        <Gridlayout [ngClass]="{ android : !isIosBar, paddingLeftFirst : i <= 4 }" class="item-list-padding"
+        <Gridlayout  [height]="getHeightAndriod" [ngClass]="{ android : !isIosBar, paddingLeftFirst : i <= 4 }" class="item-list-padding"
           horizontalAlignment="left" columns="2*,3*">
           <GridLayout>
             <!-- [ngClass]="{ imageandroid : !isIosBar == 1 }"  -->
@@ -12,7 +12,7 @@
             <WebImage stretch="aspectFill" placeholder="" [src]="item?.thumbnailURL">
             </WebImage>
             
-            <GridLayout class="heart" rows="auto" columns="auto" horizontalAlignment="left" verticalAlignment="top">
+            <GridLayout class="heart b-r-l-t" rows="auto"  columns="auto" horizontalAlignment="left" verticalAlignment="top">
               <Label text="&#xe87e;" (tap)="changeHeart(item)" [visibility]="item.favourite ? 'visible' : 'hidden'"
                 class="mainFont font-14 md-icon  " textWrap="true"></Label>
               <Label text="&#xf004;" (tap)="changeHeart(item)" [visibility]="!item.favourite ? 'visible' : 'hidden'"
@@ -42,8 +42,8 @@
 
 
     </ng-template>
-    <ListViewGridLayout *ngIf="isIosBar" tkListViewLayout scrollDirection="Horizontal" [itemHeight]="containerHeight"
-      itemWidth="240dp" spanCount="5"></ListViewGridLayout>
-    <ListViewGridLayout *ngIf="!isIosBar" tkListViewLayout scrollDirection="Horizontal" spanCount="5"></ListViewGridLayout>
+    <!-- <ListViewGridLayout *ngIf="isIosBar" tkListViewLayout scrollDirection="Horizontal" [itemHeight]="containerHeight"
+      itemWidth="240dp" spanCount="5"></ListViewGridLayout> -->
+    <ListViewGridLayout tkListViewLayout scrollDirection="Horizontal" itemWidth="240dp"  spanCount="5"></ListViewGridLayout>
   </RadListView>
 </GridLayout>

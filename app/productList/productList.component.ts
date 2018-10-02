@@ -48,7 +48,6 @@ export class ProductListComponent implements OnInit {
 
   getListItems() {
     this.dataService.getData().subscribe((result) => {
-      // this.dataItems = result;
       this.listItemsData = result;
       this.dataService.applicationData = this.listItemsData;
       this.getList();

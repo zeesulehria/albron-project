@@ -1,4 +1,4 @@
-<GridLayout rows="*" *ngIf="bottomMenuVisible" columns="*,*,*,*,*" row="2"  class="border-top page-background" [height]="bottomMenuHeight">
+<GridLayout rows="*" [visibility]="bottomMenuVisible ? 'visible' : 'hidden'" columns="*,*,*,*,*" row="2"  class="border-top page-background" [height]="bottomMenuHeight">
     <GridLayout col="0" (tap)="tabBottomChanged(0)" [nsRouterLink]="['/productlist']" pageTransition="fade">
         <Image class="image-size" src="res://homeactive" *ngIf="isActiveBottomTab() == 0"></Image>
         <Image class="image-size" src="res://home" *ngIf="isActiveBottomTab() != 0"></Image>
